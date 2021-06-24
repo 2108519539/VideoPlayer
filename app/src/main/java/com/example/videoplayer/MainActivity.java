@@ -1,14 +1,14 @@
 package com.example.videoplayer;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.videoplayer.activity.VideoPlayerActivity;
 import com.example.videoplayer.pojo.MediaInfo;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-        if (needToRequirePermission == true) {
+        if (needToRequirePermission) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, REQUEST_CODE);
         } else {
             startVideoPlayer();
